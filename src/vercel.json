@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.ts",
+      "src": "src/server.ts",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "server.ts",
+      "src": "/api/dashboard/(.*)",
+      "dest": "src/server.ts",
       "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "https://admintyppout.vercel.app",
@@ -17,6 +17,14 @@
         "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization",
         "Access-Control-Allow-Credentials": "true"
       }
+    },
+    {
+      "src": "/health",
+      "dest": "src/server.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "src/server.ts"
     }
   ]
 }
