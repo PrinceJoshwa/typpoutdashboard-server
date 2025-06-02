@@ -18,18 +18,18 @@ app.use(helmet());
 //   credentials: true
 // }));
 
-// app.use(cors({
-//   origin: "https://admintyppout.vercel.app"
-// }));
+app.use(cors({
+  origin: "https://admintyppout.vercel.app"
+}));
 
-app.use(
-  cors({
-    origin: ["https://admintyppout.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://admintyppout.vercel.app"],
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true,
+//   })
+// );
 
 app.use(morgan("combined"));
 app.use(express.json());
