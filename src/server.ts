@@ -1,9 +1,12 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
 import dashboardRoutes from "./routes/dashboard";
 import { errorHandler, notFound } from "./middleware/errorHandler";
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
