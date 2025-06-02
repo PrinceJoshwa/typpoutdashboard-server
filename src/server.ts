@@ -29,7 +29,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
-)
+);
 
 app.use(morgan("combined"));
 app.use(express.json());
